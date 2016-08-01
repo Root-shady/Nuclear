@@ -1,0 +1,100 @@
+    ndarray: A fast and space-efficient multidimensional array providing vectorized arithmetic operations and sophisticated broadcasting capabilities.
+    Standard mathematical fucntion for fast operations on entire arrays of data without having to write loops.
+    Tools for reading/writting array data to disk and working with memory-mapped files.
+    Linear algebra, eandom number generation, and Fourier transform capabilities
+    Tools for integrating code written in C, C++, and Fortran
+
+An ndarray is a generic multidimensional container for homogeneous data, all of the elements must be the same type. Every array has a shape, a tuple indicating the size of each dimension, a dtype, and an object descripting the data type of the array:
+    >>> data.shape
+    >>> data.dtype
+    >>> data.reshape(1,3)
+    Unless explicitly specified, np.array tries to infer a good data type for the array that it creates.
+    >>> np.zeros(10)
+    >>> np.zeros((3,4))
+    >>> np.empty((4,5,6)) # Return uninitialized garbage values
+arange is an array-valued version of the built-in Python range function:
+    >>> np.arange(15)
+    >>> np.arange(15, 20, 2)
+
+    Standard array creation functions:
+        array: Convert input data(list, tuple, or other sequence type) to an ndarray 
+        asarray: Convert input to ndarray, but do not copy if the input is already an ndarray
+        arange: Like the built-in range but returns an ndarray instead of a list
+        ones, ones_like: Produce an array of all 1's with the given shape and dtype.
+            ones_like takes another array and produces a ones array of the same shape and dtype.
+        zeros, zeros_like: Like ones and ones_like but producing arrays of 0's instead
+        empty, empty_like: Create new array by allocating new memory, but do not populate with any value like ones and zeros
+        eye, identity: Create a square N * N identity matrix(1's on the diagonal and 0's elsewhere)
+
+    2. Data Types for ndarrays
+        The data type or dtype is a special object containing the information the ndarray needs to interpret a chunk of mempry as a particular type of data.
+        dtype=np.float64, dtype=np.int32
+    Dtype mkaes NumPy much more powerful and flexible, in most case, they map directly onto an underlying machine representation, which makes it easy to read and write binary streams of data to disk and also to connect to code written in a low-level language like CorFortran. 
+    You can explicitly convert or cast an array from one dtype to another using ndarray's astype method.
+    >>> arr = np.array([3,4,5])
+    >>> float_arr = arr.astype(np.float64)S
+    >>> sepcify = np.array([3,4,5], np.float32)
+ If casting were to fail for some reason, a TypeError will be raised. 
+ Calling astype always creates a new array, even if the new dtype is the same as the old dtype.
+
+
+ 3. Operations(Arrays and Scalars)
+        vectorization: Any arithmetic operations between equal-size arrays applies the operation elementwise.
+    (1). Basic Indexing and Slicing
+        If you assign a scalar value to a slice, the value is propagated to the entire selection.
+        (The slicing will not be copied, any modifications to the view will be reflected in the source array)
+    >>> a = np.arange(5)
+    >>> b = a[:2]
+    >>> b = 2
+    >>> a
+    [2,2,2,3,4]
+Since Numpy has been designed with large data use cases in mind, you could image performance and memory problems if Numpy insisted on copying data left and right.
+    call the array[:5].copy() explicitly instead, to make a copy of the array.
+
+   (2). High dimensional arrays
+    Pass a comma-separated list of indices to select individual element
+    >>> arr[0][1]  >>> arr[0, 1]
+    In multidimensional arrays, if you omit later indices, the returned object will be a lower-dimensional ndarray conssiting of all the data along the higher dimensions.
+    (3). Indexing with slices
+        Higher dimensional objects give you more options as you can slice one or more axes and also mix integers.
+    (4). Boolean indexing
+      Use the randn function in numpy.random to generate some random normally distributed data:
+    >>> data = np.rnadom.randn(7,2)
+    >>> array(['Bob', 'Joe', 'Will', 'Bob', 'Will', 'Joe', 'Joe'], dtype='|S4')
+    >>> data[names=='Bob']
+    >>> data[names == 'Bob', 2:]
+    To select everything but 'Bob', you can either use != or negate the condition using -.
+    Use the boolean arithmetic operators like: &(and) and |(or)
+    >>> nask = (name=='Bob') | (names=='Will')
+    Select data from an array by boolean indexing always creates a copy of the data, even if the returned array is unchanged.
+    Setting values with boolean arrays works in a common-sense way.
+    
+    (5). Fancy indexing
+        Fancy indexing is a term adapted by Numpy to describe indexing using integer arrays.
+        >>> one = np.zeros((10, 5)) 
+        >>> for i in range(10):
+            one[i][[0,1,2]] = i
+    To select out a subset of the rows in a particular order, you can simply pass a list or ndarray of integers specifying the desired order.
+        # 按照顺序输出数组 
+        >>> arr[[4,3,2,8]]
+        >>> arr = np.arange(32).reshape((8, 4))
+        >>> arr[[1,5,7,2], [0,3,1,2]]
+        The rectangular region formed by selecting sybset of the matrix's rows and columns.
+# 获得所选的行和列
+        >>> arr[[1,5,7,2]][:, [0, 3,1,2]]
+        Use the np.ix_ function, which converts two 1D integer arrays to an indexer that selects the square region.
+        >>> arr[np.ix_([1,5,7,2], [0,3,1,2])]
+    (6). Transposing arrays and swapping axes
+        Transposing is a special form of reshaping which similarly returns a view on the underlying data without copying anything. Arrays have the transpose method and also the special T attrribute.
+        >>> arr = np.arange(15).reshape((3, 5))
+
+
+
+
+
+
+
+
+    
+
+
