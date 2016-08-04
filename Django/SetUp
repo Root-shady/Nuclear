@@ -1,0 +1,5 @@
+1. install mysqlclient package
+    Encounter with the problem of "EnvironmentError: mysql_config not found"
+    Solution: $ sudo apt-get install libmysqlclient-dev
+
+2. 

@@ -1,0 +1,7 @@
+Clean code that works.
+
+2. How the application functions from the user's point of view(funcational test)
+black box test, Functional test == Acceptance test == end-toend test
+user story: FTs should have a human-readable story that we can follow.
+    
+

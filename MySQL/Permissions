@@ -1,0 +1,7 @@
+1. Show all the privileges for specific user
+    $ show grants for 'shady'@'localhost';
+    $ show grants; # show privileges for the current user.
+
+2. Grant permissions for the specific user
+    $  grant all privileges on 'databasename.tablename' to 'shady'@'localhost';
+

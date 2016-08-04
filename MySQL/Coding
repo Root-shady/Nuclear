@@ -1,0 +1,14 @@
+Set mysql default coding method to UTF-8:
+    (1). modify the mysql configuration file in /etc/mysql/conf.d/mysql.cnf
+    Adding the following line:
+        [mysql]
+        default-character-set=utf8
+
+        [client]
+        default-character-set=utf8 
+
+        [mysqld]
+        character-set-server = utf8
+    (2). restart mysql service usinng the init script
+        $ sudo /etc/init.d/mysql restart/start/stop
+
