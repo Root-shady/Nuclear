@@ -1,0 +1,112 @@
+	Decorators dynamically alter the functionality of a function, method or class
+without having directly use subclass.
+	Essentially, decorators works as wrappers, modifying the behavior of the code
+before and after a target function execution, without the need to modify the function
+itself, augmenting the original functionality, thus decorating it.
+
+1. Inner function have access to the enclosing scope
+	Known as closure, Python only allows read access to the outer scope and not assignment.
+
+2. Composition of decorators
+	Function decorators are simply wrappers to existing functions. 
+
+Example Decorator:
+	A function that takes another function as an argument, generates a new function, 
+augmenting the work of the original function, and returning the generated function so 
+we can use it everywhere.
+
+3. Python's Decorator Syntax
+	Python makes creating and using decorators a bit cleaner and nicer for the programmer 
+through some syntactic sugar.
+
+	def p_decorate(func):
+		def func_wrapper(name):
+			return '<p>{0}</p>'.format(func(name))
+		return func_wrapper
+	
+	def strong_decorate(func):
+		def func_wrapper(name):
+			return '<strong>{0}</strong>'.format(func(name))
+		return func_wrapper
+	get_text = strong_deocrate(p_decorate(get_text))
+
+With Python syntax, it can be expressed in the following method:
+	@strong_decorate
+	@p_decorate
+	def get_text(name):
+		return 'lorem ipsum, {0} dolor sit amet'.format(name)
+
+4. Decorating Methods
+	In Python, methods are functions that expected their first parameter to be a reference to the current object.
+	A much better approach would be to make our decorator useful for functions and methods alike.
+
+def p_decorate(func):
+	def func_wrapper(*args, **kwargs):
+		return "<p>{0}</p>".format(func(*args, **kwargs))
+	return func_wrapper
+
+class Person(object):
+	def __init__(self):
+		self.name = 'John'
+		self.family = 'Doe'
+	
+	@p_decorate
+	def get_fullname(self):
+		return self.name + self.family
+
+my_person = Person()
+print my_person.get_fullname()
+
+5. Passing arguments to decorators
+	
+	def tags(tag_name):
+		def tags_decorator(func):
+			def func_wrapper(name):
+				return "{0}{1}</{0}>".format(tag_name, func(name))
+			return func_wrapper
+		return tags_decorator
+	
+	@tags("p")
+	def get_text(name):
+		retur "Hello" + name
+	print get_text('John')
+	Decorators expect to receive a function as an argument, that is why we will have to 
+build a function that takes those extra arguments and generate our decorator ob the fly.
+
+6. Debugging decorated functions
+	The wrapper function dose not carry the name, module and docstring of the original
+function.
+	The attributes __name__, __doc__ and __module__ of get_text got overridden by those 
+of the wrapper.
+	(1). Funtools can be used
+		Fortunately Python includes the funtools module which contains funtools.wraps. 
+	Wraps is a decorator for updating the attributes of the wrapping function to those of 
+	the original function.  
+
+	from functions import wraps
+	def tags(tag_name):
+		def tags_decorator(func):
+			@wraps(func)
+			def fun_wrapper(name):
+				return '<{0}>{1}</{0}>'.format(tag_name, func(name))
+			return func_wrapper
+		return tags_decorator
+
+	@tags('p')
+	def get_text(name):
+		"""Return some text"""
+		return "Hello" + name
+
+print get_text.__name__
+print get_text.__doc__
+print get_text.__module__
+
+	Decorators provide a simple syntax for calling higher-order functions. A decorator 
+is a function that takes another function and extends the behavior of the latter 
+function without explicitly modifying it. 
+
+
+
+
+
+
