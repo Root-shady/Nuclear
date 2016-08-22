@@ -1,0 +1,3 @@
+Adding a field to the model serializer that dose not exist in the model
+http://stackoverflow.com/questions/38755622/define-an-arbitrary-field-on-a-django-rest-framework-serializer-that-doesnt-exi
+

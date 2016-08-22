@@ -1,0 +1,15 @@
+How to downgrade firefox:
+    The upgraded firefox problem: Cause the selenium driver cannot work properly.
+ View the version of firefox in the system:
+    $ sudo apt-cache show firefox | grep Version
+# Install the corresponding verison:
+    $ sudo apt-get install firefox=45.0.2+build1-0ubuntu1
+# Keep current version and disallow updates
+    $ sudo apt-mark hold firefox
+
+# Unhold firefox verison and allows updates
+    $ sudo apt-get unhold firefox
+    $ sudo apt-get update
+
+
+    

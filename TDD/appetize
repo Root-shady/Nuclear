@@ -2,6 +2,64 @@ Clean code that works.
 
 2. How the application functions from the user's point of view(funcational test)
 black box test, Functional test == Acceptance test == end-toend test
-user story: FTs should have a human-readable story that we can follow.
+
+(1. user story: 
+    FTs should have a human-readable story that we can follow.
+    A description of how the application will work from the point of view of the user. Used to structure a functional test.
+
+(2. Expected failure:
+    When a test fails in the way that we expected it to.
+
+3. The difference between functional test and unit test
+    Functional tests test the application from the outside, from the point of view of the user.
+    Unit tests test the application from the inside, from the point of view of the programmer.
+  Functional tests should help you build an application with the right functionality, and guarantee you never accidentally break it. Unit tests should help you to write code that's clean and bug free.
+
+4. The unit-test/code cycle
+    1. Run the unit test in the terminal
+    2. Make a mininal code change in the editor
+    3. Repeat
+TDD is a discipline, and that means it's not something that comes naturally, because many of the payoffs aren't immediate but only come in the longer term, you have to force yourself to do it in the moment.
+
+5. Refactor
+    When refactoring, work on either the code or the tests, but no both at once.
+
+6. The TDD process
+    Functional tests
+    Unit tests
+    The unit-test/code cycle
+    Refactoring
+  The functional tests are the ultimate judge of whether your application works or not. The unit tests are a tool to help you along the way.
+
+7. Debug tricks
+    Add print statements, to show some information
+    Improve the error message to show more info about the current state
+    Manually visit the site yourself
+    Use time.sleep to pause the test during execution
+
+8. Struture of the test
+    Set up the test condition
+    Make the test run
+    Check the returned result using Assertion
+
+9. Red/Green/Refactor and Triangulation
+    * Start by writting a unit test which fails(Red)
+    * Write the simplest possible code to get it pass(Green), even if that means cheating
+    * Refactor to get better code that makes more sense.
+
+10. Bad code smell
+    Don't repeat yourself(DRY)
+    Three strikes and refactor, once you get the three occurences, it's time to remove duplication.
+
+11. Better unit testing practice
+    Each test should test one thing, which makes it easy to track down bugs.
+
+12. Concepts
+    Regression: 
+        When new code breaks some aspect of the application which used to work
+    Three strikes and refactor
+        A rule of thumb for when to remove duplication from code.
     
+
+
 

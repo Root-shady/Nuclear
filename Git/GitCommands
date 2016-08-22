@@ -1,9 +1,24 @@
-Specify the editor in git:
+1. Specify the editor in git:
     $ git config --global core.editor vi
     $ git config --global core.pager less
 
-Customize the git output:
+2. Customize the git output:
 [alias]
 lg1 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
 lg2 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all
 lg = !"git lg1"
+
+
+3. Adding git password cache 
+Adding your public key to the server, then test with the following command:
+    Test your github connection: $ ssh -T git@github.com
+git config --global credential.helper "cache --timeout=3600"
+
+4. To add all the file without all the untracked file
+    $ git add .  # which means staged new and modified, without deleted.
+    $ git add -u # Which stages modified and delted, without new.
+    $ git add -A # which means stages ALL.
+
+5. Git remote management
+git remote add  origin ssh://git@112.74.98.251:10240/home/git/srv/git/vshow.git
+git remote remove origin

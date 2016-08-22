@@ -1,4 +1,8 @@
     ndarray: A fast and space-efficient multidimensional array providing vectorized arithmetic operations and sophisticated broadcasting capabilities.
+    NumPy's main object is the homogeneous multidimensional array, it is a tables of elements, all of the same type, indexed by a tuple of positive integers. In NumPy dimensions are called axes, the number of axes is rank.
+
+
+
     Standard mathematical fucntion for fast operations on entire arrays of data without having to write loops.
     Tools for reading/writting array data to disk and working with memory-mapped files.
     Linear algebra, eandom number generation, and Fourier transform capabilities
@@ -87,14 +91,3 @@ Since Numpy has been designed with large data use cases in mind, you could image
     (6). Transposing arrays and swapping axes
         Transposing is a special form of reshaping which similarly returns a view on the underlying data without copying anything. Arrays have the transpose method and also the special T attrribute.
         >>> arr = np.arange(15).reshape((3, 5))
-
-
-
-
-
-
-
-
-    
-
-

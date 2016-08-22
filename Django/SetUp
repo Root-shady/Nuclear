@@ -2,4 +2,14 @@
     Encounter with the problem of "EnvironmentError: mysql_config not found"
     Solution: $ sudo apt-get install libmysqlclient-dev
 
-2. 
+2. using virtualenvwrapper to isolate different project environment
+    When creating different environment, you can specify the python version.
+    $ mkvirtualenv  --python=/usr/bin/python3 VirtualName
+    Notice that python2 and python3 cannot be in the same virtualenv, therefore, you should specify the python version to be used when you create the virtual environemnt. And use the corresponding pip tool to set up the third-party package.
+
+3. Setting up django environment in python script
+    >>> import os
+    >>> os.environ['DJANGO_SETTING_MODULE'] = 'mysite.settings'
+    >>> import django
+    >>> djangosetup()
+
