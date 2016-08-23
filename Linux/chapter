@@ -1,0 +1,65 @@
+The Linux man page conventional section names
+  Name: Display command name and short description
+  Example: hostname -help
+
+The filesystem in Linux:
+    Linux stores files within a single directory structure, called a virtual directory. The virtual directory contains file paths from all the storage devices installed on the computer, merged into a single directory structure.
+
+
+Common Linux Directory Names
+(1). /      Root of the virtual directory, where normally, no files are placed
+(2). /bin   Binary directory, many GNU user-level utilities are stored.
+(3). /boot  Boot directory, where boot files are store
+(4)./dev    Device directory, where linux creates device nodes
+(5)./etc    system configuration files directory
+(6)./home   hoem directory, where Linux create user directories
+(7)./lib    Library directory, where system and application library files are stored
+(8)./media  Media directory, a common place for mount points used for removable media
+(9)./mmt    mount directory, another common place for mount points used for
+(10)./opt   optional directory, often used to store third-party software packages and data files
+(11)./proc  process directory, where current hardware and process information is stored
+(12)./root  roo home directory
+(13)./sbin  system binary directory, where many GNY admin-level utilities are stored
+(14)./run   run directory, where runtime data is held during system operation
+(15)./srv   service directory, where local services stored their files
+(16)./sys   system directory, where system hardware information file are stored
+(16)./tmp   temporary directory, where temporary work files can be created and destroy
+(17)./usr   user binary directory, where the bulk of GNU user-level utilities and data files are stored
+(18)./var   variable directory, for file that change frequently, such as log file
+
+The common linux directory names are based upon the Filesystem Hierarchy Standard(FHS).
+
+1. Display a basic listing
+    $ ls -F
+    $ ls -d
+    The -d option lists a directory's information but not its contents.
+    Use the -F parameter with the ls command to easily distinguish files from directories.
+    The file type -- such as diretory(d), file(-), linked file(l), character device(c), or block device(b)
+
+    Meta character:
+        A question mark(?) to represent one character
+        An asterisk(*) to represent any number of characters
+    Using the asterisk and question mark in the filter is called file globbing. File globbing is  the processing of pattern matching using wildcards. The wildcards are officially called metacharacter wildcards. 
+    $ ls -l my_src[ai]pt
+    $ ls -l my_src[a-i]ll
+    You can specify what should not be included in the pattern match by using the exclamation point(!)
+    To modify the file's modify time and access time, you can use the touch command, with the following format.
+    (1). touch already_exist_file     --> Change its modification time
+    (2). touch -a already_exist_file  --> Change file's access time
+
+2. Link file
+    Linking files is a great option available in the Linux filesystem. Need to maintain two copies of the same file on the system, instead of having separate physical copies, you can use one physical copy and multiple virtual copies, called links.
+    A symbolic link is simply a physical file that points to another file somewhere in the virtual directory structure. Another way to tell that these linked files are separate physical files is by viewing their inode number. The inode number of a file or directory is a unique identification number that the kernel assgns to each object in the filesystem. 
+    
+    (1). The difference between soft link and hard link?
+        A hard link creates separate virtual file that contains information about the original file and where to locate it. 
+        Underneath the file system, files are represented by inodes.
+        A file in the file system is basically a link to a node. A hard link then just creates another file with a link to the same underlying inode. When you delete a file it removes one link to the underlying inode. The inode is only deleted when all links to the inode have been deleted.
+        A symbolic link is a link to another name in the file system.  Once a hard link has been made, the link is to the node, deleting renaming or removing the original file will not affect the hard link as it links to the underlying inode. Any changes to the data on the inode is reflected in all file that refer to that inode.
+        You can only create a hard link between files on the same physical medium, to create a link between file under separate physical medium, you must use a symbolic link.
+
+        
+
+
+
+

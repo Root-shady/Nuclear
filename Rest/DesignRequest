@@ -1,3 +1,24 @@
     HTTP 1.1spec allow message bodies on DELETE requests
 Link: http://stackoverflow.com/questions/14323716/restful-alternatives-to-delete-request-body
 
+    Learn design RESTful web service for client and server applications that meet performance, scalability, reliability, and security goals.
+
+    Architectual Styles and the Design of Network-Based Architectures.(Representational State Transfer  Architectures[REST]) The technologies that make up this foundation include the Hypertext Transfer Protocol(HTTP), Uniform Resource Identifier(URI), markup languages such as HTML and XML, and web-friendly formats such as JSON.
+    
+1. Using the Uniform interface
+    HTTP is an application-level protocol that defines operations for transferring representations between clients and servers.
+
+(1). To keep interactions visible
+    As an application protocol, HTTP is designed to keep interactions between clients and servers visible to libraries, servers, proxies, caches, and other tools.
+    Use GET to get a represnetation of a resource, PUT to update a resource, DELETE to delete a resource, and POST to perform a variety of potentially nonidempotent and unsafe operations.
+    
+    Caching: Caching responses and automatically invalidating cached response when resources are modified.
+    Optimistic concurrency control: Detecting concurrent writes and preventing resource changes when such operations are based on stale representations.
+    Content negotiation: Selecting a representation among alternatives available for a given resource.
+    Safety and idempotency: Ensuring that clients can repeat and retry certain HTTP requests.
+
+    A. HTTP interactions are stateless. 
+    B. HTTP uses a uniform interface consiting of OPTIONS, GET, GET, HEAD, PUT, POST, DELETE, and TRACE methods. Each method in this interface operates on one and only one resource. 
+    C. HTTP uses a MIME-like envelope format to encode representations. This format maintains a clear separation between headers and the body. 
+
+

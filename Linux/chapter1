@@ -1,0 +1,47 @@
+1. Four main parts make up a Linux system:
+
+    (1. The Linux Kernel
+    (2. The GNU utilities
+    (3. A graphical desktop environemnt
+    (4. Application software
+
+Linux kernel
+    The kernel controls all the hardware and software on the computer system, allocating hardware when necessary when necessary and executing software when required.
+    (1). System memory management
+        Use the swap space to virtualize the memory.(physical memory and virtual memory)
+        The memory locations are grouped into blocks called pages. The kernal then maintains a table of the memory pages that indicates which pages are in physical memory and which pages are swapped out to disk.
+    (2). Software program management
+        The kernel controls how the linux system manages all the processes running on the system.
+        The kernel create the first process, called the init process, to start all other process on the system. When the kernel starts, it loads the init process into virtual memory, as the kernel starts each additional process, it gives it a unique area in virtual memory to store the data and code that the process uses.
+        (/etc/init.d, which contains scripts for starting and stopping individual applications at boot time. The scripts are started via entries under the /etc/rcX.d folder, where X is a run level)
+    (3). Hardware management
+        Any device that the Linux system must communicate with needs driver code inside the kernel code. The driver code allows the kernel to pass data back and forth to the device, acting as a midddle man between applications and the hardware.
+        The linux system identifies hardware devices as special files, called device fiels. 
+            (1. Character
+            (2. Block
+            (3. Network
+        Character device files are for devices that can only handle data one character at a time.
+        Most types of modems and terminals are created as character files. Block files are for devices that can handle data in large blocks at a time. The network file types are used for devices that use packets to send and receive data.
+        Linux creates special files, called nodes, for each device on the system. All communication with the device is performed through the device node. 
+    (4). Filesystem management
+        If the kernel is compiled with support for all types of filesystems, then it can read and write to and from different filesystems.
+        The linux kernel interfaces with each filesystem using the Virtual File System(VFS). This provides a standard interface for the kernel to communicate with any type of filesystem.
+
+3. The GNU Utilities
+    The core GNU utilities: 
+        (1). Utilities for handling files
+        (2). Utilities for manipulating text
+        (3). Utilities for managing processes
+    The Shell: The GNU/Linux shell is a special interactive utility. It provides a way for user to start program, manage files on the filesystem, and manage processes running on the Linux system.
+
+4. The Linux Desktop Environment
+    The X window System: which is the core element in presenting graphics(The video card and the monitor)  The X windwo software is a low-level program that works directly with the video card and monitor in the PC, and it controls how Linux applications can present fancy windows and graphics on your computer.
+
+5. Linux distributions
+    A complete Linux System package is called a distribution. 
+    A core Linux distribution contains a kernel, one or more graphical desktop environments, and just about every Linux application that is available, precompiled for the kernel.
+    
+    
+
+    
+

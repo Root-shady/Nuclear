@@ -1,0 +1,11 @@
+Getting to the shell
+1. Reaching the command line
+    (1). Console ternimals
+        One way to get to a CLI is to take the Linux system out of graphical desktop mode and place it in text mode. This mode is called the Linux console because it emulates the old days of a hard-wired console terminal and is direct interface to the Linux system.
+    When the Linux system starts, it automatically creates serveral virtual consoles. A virtual console is a terminal session that runs in Linux system memory.
+    (2). Graphical terminals
+        A terminal emulation pacakge from within the Linux graphical desktop environment. 
+    After loggin into a virtual console, you are taken to the Linux CLI. Within the Linux virtual console, you do not have the ability to run any graphical programs. After you have logged in a virtual console, you can keep it active and switch to another virtual console without losing your active session. ($ setterm -inversescreen on)
+    ($setterm -background yellow) ($setterm -forground white)
+   (3). Using the xterm terminal emulator
+    The oldest and most basic terminal emulation packages is xterm. 
