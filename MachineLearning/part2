@@ -1,0 +1,43 @@
+Making Recommendations
+    Collect preference...
+
+1. Collaborative Filtering
+    A collaborative filtering algorithm usually works by searching a large group of people and finding a smaller set with tastes similar to yours.
+    (1). Collecting References
+    A.  Concert tickets 
+        Bought      1
+        Didn't buy  0
+
+    B.  Online shopping
+        Bought      2
+        Browsed     1
+        Didn't Buy  0
+
+    C. Site Recommender
+        Liked       1
+        No vote     0
+        Dislike     -1
+    (Similarity Score: Euclidean distance and Pearson correlation)
+
+2. Person Correlation Score
+    The correlation coefficient is a measure of how well two sets of data fit on a straight line.
+    One of the benifits is that it corrects for grade inflation. 
+ The Personal product-moment correlation coefficient is a measure of the strength of a linear association between two variables and is denoted by r.(r indicates how far away all these data points are to this line of best fit.)
+    The stronger the association of two variables, the closer the Person corelation coefficient, r, will be to either +1, or -1 depending on whther the relationship is positive or negative, respectively.
+
+3. which Similarity Metric to use
+    Choose the metrics for comparing items:
+        (1). Euclidean distance
+        (2). Pearson correlation coefficient
+        (3). Jaccard coefficient
+        (4). Manhattan distance
+
+4. Recommending Items
+    A person who is similar to me will contribute more to the overall scre than a person who is different from me. 
+    A movie reviewed by more people would have a big advantage, to correct this, you need to divide by the sum of all the similarities for critics that reviewed that movies.
+
+5. Matching Products
+    It's not always clear that flipping people and items will lead to useful results, but in many case it will allow you to make interesting comparisons. 
+    
+
+    

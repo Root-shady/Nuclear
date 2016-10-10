@@ -1,0 +1,6 @@
+    A REST API should spend almost all of its descriptive effort in defining the media type(s) used for representing respources and driving application state.
+
+1. Endpoint documentation
+    Most common way to document Web APIs is to produce documentation that lists the API endpoints verbatim, and describes the allowable operations on each.(Live API Endpoints allow you to utilize the endpoints from within the documentation in a neat way)
+
+

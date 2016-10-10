@@ -51,5 +51,16 @@ HTTP 持久连接
     (2). Implementing idempotent methods
         Idempendency guarantees clients that can repeating a request has the same effects as making a request just once.
 
+2. HTTP 基础
+起始行(Start line)
+    包含请求/回复最重要的信息
+头信息(Headers)
+   每一行是一对键值对(key-value pair)， 包含一个名为Content-Type的参数
+   HTTP的请求必须有Host头信息， 用于说明服务器的地址和端口
+   Content—Type 说明了主体所包含的资源的类型， 根据类型的不同， 客户端可以启动不同的处理程序
+   Content-Length 说明了主体部分的长度
+主体(Entity)
+    主体包含了具体的资源
+
 
 

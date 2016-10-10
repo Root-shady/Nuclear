@@ -1,0 +1,13 @@
+K-Nearest-Neighbors
+    Search through the training dataset for the k-most similar instance.
+
+Euclidean distance(distance = sqrt((x1-x2)**2 + (y1-y2)**2) 
+    [real-value data]
+Hamming distance
+    The hamming distance between two strings of equal length is the number of positions at which the corresponding symbols are different.
+    [categorial or binary data]
+
+    The kNN algorithm is belongs to the family of instance-based, competitive learning and lazy learning algorithm.
+    Instance baed algorithm are those algorithms the model the problem using data instances in order to make predictive decisions.
+    kNN algorithm internally uses competition between model element in order to make a predictive decision.
+    Lazy learning refers to the 

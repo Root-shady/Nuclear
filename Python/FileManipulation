@@ -1,0 +1,5 @@
+# To remove the file in the system
+try:
+    os.remove(filename)
+except OSError:
+    pass

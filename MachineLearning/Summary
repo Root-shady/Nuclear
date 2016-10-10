@@ -1,0 +1,18 @@
+What is Deep Learning?
+    Deep learning is a subfield of machine learning concerned with algorithms inspired by the structure and function of the brain called artifical neural networks.
+
+Andrew Ng:
+    Deep Learning, Self-Taught Learning and Unsupervised Feature Learning.
+    Using brain silulations:
+        (1). Make learning algorithm much better and easier to use
+        (2). Make revolutionary advances in machine learning and AI
+    (Almost all the value today of deep learning is through supervised learning or learning from labeled data)
+  When you hear the term deep learning, just think of a large deep neural net. Deep refers to the number of layers typically and so this kind of the popular term that's been adopted in the press. I think of them as deep neural networks generally.
+  (More data + Bigger models + More computation)
+
+Deep learning algorithm seek to exploit the unknow structure in the input distribution in order to discover good representations, often at multiple levels, with higher-level learned features defined in terms of low-level feature.
+
+    The hierarchy of concept allows the computer to learn complicated concepts by building them out of simpler ones. If we draw a graph showing how these concepts are built on top of each other, the graph is deep, with many layers. For this reason, we call this approach to AI deep learning.
+
+
+

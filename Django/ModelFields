@@ -1,0 +1,16 @@
+Adding Index to specific model fields:
+    identifier = models.CharField(max_length=100, unique=True, db_index=True)
+
+Adding unique to multiple field
+    unique_together = ('solutionName', 'mapName')
+
+Get the filename from the upload file:
+    if 'image' in requst.FILES:
+        up_file = request.FILES['image']
+        filename = up_file.name
+        
+        destination = open(filepath, 'wb+')
+        for chunk in up_file.chunks():
+            destination.write(chunk)
+
+

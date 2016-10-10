@@ -58,6 +58,20 @@ The common linux directory names are based upon the Filesystem Hierarchy Standar
         A symbolic link is a link to another name in the file system.  Once a hard link has been made, the link is to the node, deleting renaming or removing the original file will not affect the hard link as it links to the underlying inode. Any changes to the data on the inode is reflected in all file that refer to that inode.
         You can only create a hard link between files on the same physical medium, to create a link between file under separate physical medium, you must use a symbolic link.
 
+3. view the whole file
+    The file command determines the platform that the program was compiled for and what types of libraries it requires.
+    Use the cat command to view the content of a file: 
+    $ cat -n test1    # Printed out the number of the lines
+    $ cat -b test1    # Printed out the non-empty line number
+    $ cat -T test1    # The -T parameter replaces any tabs in the text with the ^I character combintion.
+
+    To view part of the file, use the head, tail command, like the following:
+    (1). $ cat ~/.bashrc | head -5 
+    (2). $ cat ~/.bashrc | tail -5
+
+
+
+       
         
 
 

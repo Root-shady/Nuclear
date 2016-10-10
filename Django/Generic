@@ -1,0 +1,9 @@
+Cover The High Level Method
+
+    # 更新的时候， 如果没有进行相关的文件更新， 则保留原文件路径
+    #    instance = self.get_object()
+    #    if not serializer.validated_data['path']:
+    #        updated = serializer.save()
+    #        updated.path = instance.path
+    #        updated.save()
+

@@ -21,4 +21,7 @@ Link: http://stackoverflow.com/questions/14323716/restful-alternatives-to-delete
     B. HTTP uses a uniform interface consiting of OPTIONS, GET, GET, HEAD, PUT, POST, DELETE, and TRACE methods. Each method in this interface operates on one and only one resource. 
     C. HTTP uses a MIME-like envelope format to encode representations. This format maintains a clear separation between headers and the body. 
 
+ 
+
+
 

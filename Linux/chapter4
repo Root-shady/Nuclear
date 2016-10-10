@@ -1,0 +1,118 @@
+Bash commands
+    One of the toughest jobs of being a Linux system administration is keeping track of what's running on the system. 
+
+1. Peeking at the processes
+(1). Unix-style parameters
+   ps   -A      Shows all processes
+        -N      Shows the opposite of the specified parameters
+        -a      Shows all process except headers and processes without a terminal
+        -d      Shows all processes except session headers
+        -e      Shows all processes
+        -C cmslist  Shows processes contained in the list cmdlist
+        -G grplist  Shows processes with a group ID listed in grplist
+        -U userlist Shows processes owned by a userid listed in userlist
+        -g grplist  Shows processes by session or by groupid contained in grplist
+        -p pidlist  Shows processes with OIDs in the list pidlist
+        -s sesslist Shows processes with session ID in the list sesslist
+        -u userlist Shows processes by effective userid in the list userlist
+        -F      Use extra full output
+        -O format Displays specific columns in the list format, along with the default column.
+        -M      Display security information about the process
+        -c      Show additional scheduler information about the process
+        -f      Display a full format listing
+        -j      Show job information
+        -l      Display a long listing
+        -o format   Display only specific columns listed in format
+
+Use the ps -ef command to display all the information about the processes in the system.
+UID:    The user responsible for launching the process
+PID:    The process ID of the process
+PPID:   The PID of the parent process
+C:      Processor utilization over the lifetime of the process
+STIMEL: The system time when the process started
+TTY:    The terminal device from which the process was launched.
+TIME:   The cumulative CPU time required to run the process.
+CMD:    The name of the program that was started.
+
+F:      System flags assigned to the process by the kernel
+S:      The state of the process(O=running on processor; S=Sleeping; R=runnable, waiting to run; Z=zombie, process terminated but parent not available; T=process stopped.)
+PRI:    The priority of the process(higher numbers means lower priority)
+NI:     The nice value, which is used for determining priorities
+ADDR:   The memory address of the process
+SZ:     Approximate amount of swap space required if the process was swapped out
+WCHAN:  Address of the kernel function where the process is sleeping
+
+VSZ:    The size in kilobytes of the process in memory
+RSS:    The physical memory that a process has used that isn't swapped out
+STAT:   A two-character state code representing the current process state.
+
+PID:    The process ID of the process
+USER:   The user name of the owner of the process
+PR:     The priority of the process
+NI:     The nice value of the process
+VIRT:   The total amount of virtual memory used by the process
+VIRT:   The total amount of virtual memory used by the process
+RES:    The amount of physical memory the process is using.
+SHR:    The amount of memory the process is sharing with other processes
+S:      The process status(D=interruptible sleep, R=running, S=sleeping, T=traced or stopped, or Z=zombie)
+%CPU:   The share of CPU time that the process is using
+%MEM:   The share of available physical memory the process is using
+TIME+:  The total CPU time the process has used since starting
+COMMAND:    The command line name of the process(program started)
+
+By default, when you start top, it sorts the processes based on the %CPU value. You can change the sort order by using one of serveral interactive commands while top is running. Each interactive command is a single character that you can press while top is running and changes the behavior of the program. 
+    Pressing the f allows you to select the field to use to sort the output. 
+    Pressing d allows you to change the polling intervals.
+    Pressing q to exit the top display.
+
+2. Stopping processes
+    In linux, processes communicate with each other using signals. A process signal is a predefined message that process recognized and may choose to ignore or act on.
+    1   HUP     Hands up
+    2   INT     Interrupts
+    3   QUIT    Stop running
+    9   KILL    Unconditionally terminates
+    11  SEGV    Produces segment violation
+    15  TERM    Terminates if possible
+    17  STOP    Stops unconditionally, but dosen't terminate
+    18  TSTP    Stops or pauses, but continues to run in background
+    19  CONT    Resume execution after STOP or TSTP
+
+1. The kill command
+    The kill commanf allows you to send signals to processes based on their process ID(PID).
+    $ kill -s HUP 8989
+    (2). The killall command: Which is a powerful way to stop processes by using their names rather than the PID numbers.
+
+
+2. Monitor disk space
+    (1). Mouting media
+        Before you can use a new media disk on your system, you must place it in the virtual directory. This task is called mounting.
+        By default, the mount command displays a list of media devices currently mounted on the system.
+        To manually mount a media device in the virtual directory, you must logged in as the root user or use sudo command to run the command as the root user.
+        $ mount -t type device directory
+    The type parameter defines the filesystem type under which the disk was formatted. The next two parameters define the location of the device file for the media device and the location in the virtual directory for the mount point.
+    $ mount -t vfat /dev/sdb1 /media/disk
+    (2). umount command
+        To remove a removable media device from system.
+        $ umount [directory | device]
+       The umount command gives you the choice of defining the media device by either its device location or its mounted directory name. 
+
+    (3). Use the df commands
+        The df command shows each mounted filesystem that contains data. 
+    The df command information: The device location, how many 1024-byte blocks of data it can hold, used, available, the use rate as percentage and the mount point where the device is mounted.
+    (4). use the du command
+       The du command shows the disk usage for specific directory. By default the du command displays all the files, directories, and subdirectories under the current directory， and it shows how many disk blocks each file or directory takes.
+    Some useful options:
+        (1). -c: Produces a grand total of all the files listed
+        (2). -h: Prints sized in human-readable form
+        (3). -s: Summarizes each argument
+
+3. Working with Data files
+    (1). Sorting data
+        The sort command sorts the data lines in a text file using standard sorting rules for the language you specify as the default for the session.
+    Make the sort command to recognize numbers as numbers instead of characters.
+        $sort -n file2
+
+
+
+
+

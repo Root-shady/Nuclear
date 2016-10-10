@@ -1,0 +1,47 @@
+    The $PATH variable is an individual user variable so each user on a system may set it to suit themselves.
+ 
+ 1. The Shebang(#!)
+#!/bin/bash  Following it is the path to the interpreter that should be used to tun the rest of the lines in the text file.
+    If you leave out the sheband, this will assume the user running the script in bash shell, which is unwise.
+
+2. Varaibles
+    Setting a value for a variable
+    Reading the value for a variable
+    
+    $0 Stands for the bash file
+    $1 Stands for the file command line option(parameters)
+    $2 Stands for the second command line option(parameters)
+    $# Stands for how many arguments were passed to the Bash script
+    $@ All the arguments supplied to the Bash script
+    $$ The process ID of the current script
+    $? The exit status of the most recently run process
+    $USER The username of the user running this script
+    $HOSTNAME The hostname of the machine the script is running on.
+    $SECONDS The number of seconds since the script was started
+    $RANDOM Returns a different random number each time is referred to. 
+    $LINENO Returns the current line number in the Bash script.
+
+3. Setting variables
+    Type command env to get a list of the environment variables.
+    variable=value
+    Variables can be useful for making our scripts easier to manage. 
+    When we enclose our content in quotes we are indicating to Bash that the contents should be considered as a single item.
+    (1). Single quotes will treat every character literally
+    (2). Double quotes will allow you to substitution.
+
+    (3). command substitution
+        Command substitution allows us to take the output of a command or program and save it as the value of a variable.
+        $ myvar = $(ls /etc| wc -l)
+    Command substitution will removed all newlines and the output ends up on a single line.
+    Using the export to telling bash that every time a new process is created, then make a copy of the variable and hand it over to the new process.(Keep a copy)
+    (4). Formatting the date in command line:
+        $ date +%Y%m%d
+
+4. Take the user input using read command
+    The general mechanism is that you supply serveral variables names to read. Read will then take you input and split it on whitespace. (The remaining variable will all be added to the last variable name)
+
+    STDIN  - /proc/<processID>/fd/0    
+    STDOUT  - /proc/<processID>/fd/1    
+    STDERR  - /proc/<processID>/fd/2    
+
+

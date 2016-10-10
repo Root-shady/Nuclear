@@ -1,0 +1,45 @@
+Nuts and bolts of manipulating, processing, cleaning, and crunching data in Python. 
+
+1. Why Python?
+    (1). Large and active scientific computing community(library support)
+    (2). Python as a glue(ease of integrating C, C++, and Fortran)
+    (3). Solving the 'Two-Language' problem(Not only suit for doing research and prototyping, but also building the production systems.)
+    (Not suit for low latency requirements, and highly concurrent, multithread applications.)
+
+2. Essential Python Libraries
+    (1). Numpy
+        Numerical Python, is the foundational package for scientific computing in Python. NumPy arrays are a much more efficient way of storing and manipulating data then the other build-in Python data structure.
+    (2). Pandas
+        Pandas provides rich data structure and functions designed to make working with structured data fast, easy, and expressive.
+        Pandas combines the high performance array-computing features of Numpy with the flexible data manipulation capabilities of spreadsheets and relational databases. 
+    (3). Matplotlib
+        Python library for producing plots and other 2D data visualizations. 
+    (4). IPython
+        Ipython is the component in the standard scientific Python toolset that ties everything together. It provides a robust and productive environemnt for interactive and exploratory computing.
+    (5). Scipy
+        Scipy is a collection of packages addressing a number of different standard problem domains in scientific computing.
+
+2. Introductory Example
+    Interacting with the outside world
+        Reading and writing a variety of file formats and databases
+    Preparation
+        Cleaning, munging, combining, normalizing, reshaping, slicing and dicing, and transforming data for analysis.
+    Transforming
+        Applying mathematical and statistical operations to groups of data sets to derive new data sets.
+    Modeling and computation
+        Connecting your data ti statistical models, machine learning algorithms, or other computational tools.
+    Presentation
+        Creating interactive or static graphical visualizations or textual summaries.
+
+3. Common form of web data JSON
+   >>> frame = DataFrame(dataset)
+   >>> tz_counts = frame['tz'].value_counnts()
+   The findna function can replace missing(NA) values and unknown(empty strings) values can be replaced by boolean array indexing.
+   >>> clean_tz = frame['tz'].fillna('Missing')
+   clean_tz[clean_tz==''] = 'Unknown'
+
+   >>> import pandas as pd
+   >>> names1880 = pd.read_csv('name/yob1880.txt', names=['name', 'sex', 'birth'])
+
+
+

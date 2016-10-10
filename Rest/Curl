@@ -1,0 +1,8 @@
+1. Sending the file using the post method, Form data
+curl -F "description=you" -F "identifier=test-1" -F "image=@/home/shady/virtualenvs/Test/CodeBase/origin.jpg" localhost:8000/solutions/textures/
+
+2. Sending the request with the put method
+curl -X PUT -d arg=val -d arg2=val2 localhost:8080
+
+3. Bypass the auth authentication
+curl --user xiaohong@staff.com:123456 -F "description=you" -F "number=I-19798" -F "path=@/home/shady/virtualenvs/Test/CodeBase/origin.jpg" -F "filename=wonderful" localhost:8000/materials/contracts/ | grep h
